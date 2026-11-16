@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
+
+  <%= stylesheet_link_tag :app%>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <main class="container py-4 > <%= yield %> </main>
+  </body>
+</html>

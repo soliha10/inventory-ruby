@@ -1,0 +1,8 @@
+.clickable {cursor: pointer;}
+.check-column { width: 2.5rem }
+.cell-wide {max-width: 22rem;}
+.drag-handle {cursor: grab; user-select: none}
+.inventory-image {max-width: 8rem; max-height: 8rem ; object-fit: cover; }
+.auth-card {max-width: 24rem;}
+.list-editor-add {max-width: 24rem;}
+.ts-wrapper {min-width: 12rem;}
