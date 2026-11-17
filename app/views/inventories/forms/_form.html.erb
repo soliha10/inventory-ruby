@@ -1,0 +1,7 @@
+<%= form_with model: inventory, id: "inventory_form", data: {controller: "autosave", action: "input->autosave#markDirty change->autosave#markDirty" } do |form| %>
+    <%= hidden_field_tag :tab, tab%>
+    <%= form.hidden_field :lock_version%>
+    <%= yield form %>
+    <%= form.submit t("actions.save" ), class: "btn btn-primary mt-3" %>
+    <span class="form-text ms-2"> <%= t("hints.autosave")%> </span>
+<% end %>

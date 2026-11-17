@@ -1,0 +1,8 @@
+<h1 class="h3">
+<%= t(".title")%>
+</h1>
+<%= form_with model: @inventory do |form| %>
+<%= render "shared/errors" , record: @inventory %>
+<%= render "inventories/forms/settings_fields" , form: %>
+<%= form.submit t("actions.create"), class: "btn btn-primary mt-3 " %>
+<% end %>

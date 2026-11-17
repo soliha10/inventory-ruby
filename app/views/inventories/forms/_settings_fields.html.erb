@@ -1,0 +1,22 @@
+<div class="vstack gap-3">
+ <div>
+    <%= form.label :title, class: "form-label"%>
+    <%= form.text_field :title, class: "form-control"%>
+ </div>
+ <div>
+    <%= form.label :category, class: "form-label"%>
+    <%= from.collection_select :category_id, Category.order(:name), :id, :name, {}, class: "form-select" %>
+ </div>
+ <div>
+    <%= form.label :description, class: "form-label"%> <%= hint(t("hints.markdown")) %>
+    <%= form.text_area :description, rows: 6 , class: "form-control"%>
+ </div>
+ <div id="tag_input" data-turbo-permanent  >
+    <%= form.label :tag_list, class: "form-label"%>
+    <%= form.text_field :tag_list, data: {controller: "remote-select", remote_select_url_value: tags_path, remote_select_create_value: true}  class: "form-control"%>
+ </div>
+ <div>
+      <%= form.label :image, class: "form-label"%>
+    <%= form.file_field :image, direct_upload: true, accept: "image/*" class: "form-control"%>
+ </div>
+</div>

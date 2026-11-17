@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs mb-3 flex-nowrap overflow-auto" >
+ <% inventory_tabs(inventory).each do |tab| %>
+ <li class="nav-item"> <%= link_to t("tabs.#{tab}"), tab_path(inventory, tab), class: class_names("nav-link", "text-nowrap", active: controller_name == "inventories" && action_name == tab) %> </li>
+ <% end%>
+</ul>
