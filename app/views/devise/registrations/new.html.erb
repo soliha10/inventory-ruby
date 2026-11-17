@@ -1,0 +1,12 @@
+<div class="mx-auto auth-card">
+   <h1 class="h3 mb-3"><%= t("nav.sign_up") %></h1>
+   <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: "vstack gap-3"} do |form| %>
+    <%= render "shared/errors", record: resource%>
+    <%= form.text_field :name, class: "form-control", placeholder: t("columns.name")%>
+    <%= form.email_field :email, class: "form-control", placeholder: t("columns.email")%>
+    <%= form.password_field :password, class: "form-control", placeholder: t("columns.password")%>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: t("columns.password")%>
+    <%= form.submit  t("nav.sign_up"), class: "btn btn-primary ",%>
+<%end%>
+<%= render "devise/shared/links"%>
+</div>
