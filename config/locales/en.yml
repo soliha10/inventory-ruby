@@ -1,31 +1,148 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  app:
+    name: "Inventory"
+  nav:
+    search: "Search inventories and items"
+    admin: "Admin"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+    sign_out: "Sign out"
+    continue_with: "Continue with %{provider}"
+  flash:
+    denied: "You are not allowed to do this."
+  actions:
+    new: "New"
+    create: "Create"
+    save: "Save"
+    delete: "Delete"
+    add: "Add"
+    send: "Send"
+    filter: "Filter"
+    confirm: "Are you sure?"
+  columns:
+    title: "Title"
+    description: "Description"
+    category_name: "Category"
+    creator_name: "Creator"
+    custom_id: "ID"
+    inventory: "Inventory"
+    created_at: "Created"
+    name: "Name"
+    email: "Email"
+    password: "Password"
+  tabs:
+    show: "Items"
+    discussion: "Discussion"
+    stats: "Statistics"
+    settings: "Settings"
+    custom_id: "Custom ID"
+    access: "Access"
+    fields: "Fields"
+  hints:
+    markdown: "Markdown is supported"
+    autosave: "Changes are saved automatically every 8 seconds"
+    preview: "Example"
+    drag: "Drag rows to reorder. Drag a row outside the list to remove it."
+    custom_id: "Must match the inventory ID format"
+    find_user: "Type a name or email"
+    id_format_html: "<b>Numbers:</b> D = decimal, X = hex, digits = leading zeros (D6 → 000042, X8 → 0000002A).<br><b>Date:</b> strftime, e.g. %Y-%m-%d.<br><b>Text:</b> any Unicode text.<br><b>Sequence:</b> largest existing + 1."
+  id_placeholders:
+    text: "Fixed text, e.g. INV-"
+    random20: "Format, e.g. X5"
+    random32: "Format, e.g. X8"
+    random6: "Format, e.g. D6"
+    random9: "Format, e.g. D9"
+    datetime: "strftime, e.g. %Y%m%d"
+    sequence: "Format, e.g. D4"
+    guid: ""
+  kinds:
+    field:
+      string: "Single-line text"
+      text: "Multi-line text"
+      number: "Number"
+      link: "Document / image link"
+      boolean: "Checkbox"
+    id_element:
+      text: "Fixed text"
+      random20: "20-bit random"
+      random32: "32-bit random"
+      random6: "6-digit random"
+      random9: "9-digit random"
+      guid: "GUID"
+      datetime: "Date / time"
+      sequence: "Sequence"
+  home:
+    index:
+      latest: "Latest inventories"
+      popular: "Top 5 popular inventories"
+      tags: "Tags"
+  search:
+    index:
+      title: "Search results: %{query}"
+      inventories: "Inventories"
+      items: "Items"
+  users:
+    show:
+      owned: "My inventories"
+      shared: "Inventories I can write to"
+  inventories:
+    new:
+      title: "New inventory"
+    update:
+      saved: "Saved"
+      conflict: "Someone else changed this inventory. Reload the page to get the latest version."
+    destroy_many:
+      deleted: "Inventories deleted"
+  stats:
+    items_count: "Items: %{count}"
+    field: "Field"
+    metric: "Metric"
+    value: "Value"
+    avg: "Average"
+    min: "Minimum"
+    max: "Maximum"
+    mode: "Most frequent"
+  items:
+    create:
+      created: "Item created"
+    update:
+      updated: "Item updated"
+    destroy_many:
+      deleted: "Items deleted"
+  admin:
+    users:
+      index:
+        title: "Users"
+        status: "Status"
+        block: "Block"
+        unblock: "Unblock"
+        promote: "Make admin"
+        demote: "Remove admin"
+      user:
+        admin: "admin"
+        blocked: "blocked"
+      bulk:
+        done: "Done"
+  devise:
+    failure:
+      blocked: "Your account is blocked."
+  activerecord:
+    attributes:
+      inventory:
+        title: "Title"
+        description: "Description"
+        category_id: "Category"
+        tag_list: "Tags"
+        image: "Image"
+        public: "Public: every signed-in user can add items"
+        fields: "Fields"
+        id_elements: "ID elements"
+      field:
+        show_in_table: "Show in table"
+      item:
+        custom_id: "ID"
+    errors:
+      messages:
+        invalid_format: "does not match the ID format"
+        too_many: "allow at most %{count} of each kind"
+        stale: "Someone else changed this item. Reload the page."

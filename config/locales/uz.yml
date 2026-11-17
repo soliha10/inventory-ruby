@@ -1,0 +1,157 @@
+uz:
+  app:
+    name: "Inventar"
+  nav:
+    search: "Inventar va itemlarni qidirish"
+    admin: "Admin"
+    sign_in: "Kirish"
+    sign_up: "Ro'yxatdan o'tish"
+    sign_out: "Chiqish"
+    continue_with: "%{provider} orqali kirish"
+  flash:
+    denied: "Sizga bu amalga ruxsat yo'q."
+  actions:
+    new: "Yangi"
+    create: "Yaratish"
+    save: "Saqlash"
+    delete: "O'chirish"
+    add: "Qo'shish"
+    send: "Yuborish"
+    filter: "Filtr"
+    confirm: "Ishonchingiz komilmi?"
+  columns:
+    title: "Nomi"
+    description: "Tavsif"
+    category_name: "Kategoriya"
+    creator_name: "Muallif"
+    custom_id: "ID"
+    inventory: "Inventar"
+    created_at: "Yaratilgan"
+    name: "Ism"
+    email: "Email"
+    password: "Parol"
+  tabs:
+    show: "Itemlar"
+    discussion: "Muhokama"
+    stats: "Statistika"
+    settings: "Sozlamalar"
+    custom_id: "Custom ID"
+    access: "Ruxsatlar"
+    fields: "Maydonlar"
+  hints:
+    markdown: "Markdown qo'llab-quvvatlanadi"
+    autosave: "O'zgarishlar har 8 soniyada avtomatik saqlanadi"
+    preview: "Namuna"
+    drag: "Tartibni o'zgartirish uchun sudrang. O'chirish uchun ro'yxatdan tashqariga sudrang."
+    custom_id: "Inventar ID formatiga mos bo'lishi kerak"
+    find_user: "Ism yoki email yozing"
+    id_format_html: "<b>Sonlar:</b> D = o'nlik, X = hex, raqam = boshidagi nollar (D6 → 000042, X8 → 0000002A).<br><b>Sana:</b> strftime, masalan %Y-%m-%d.<br><b>Matn:</b> istalgan Unicode matn.<br><b>Ketma-ketlik:</b> eng kattasi + 1."
+  id_placeholders:
+    text: "Matn, masalan INV-"
+    random20: "Format, masalan X5"
+    random32: "Format, masalan X8"
+    random6: "Format, masalan D6"
+    random9: "Format, masalan D9"
+    datetime: "strftime, masalan %Y%m%d"
+    sequence: "Format, masalan D4"
+    guid: ""
+  kinds:
+    field:
+      string: "Bir qatorli matn"
+      text: "Ko'p qatorli matn"
+      number: "Son"
+      link: "Hujjat / rasm havolasi"
+      boolean: "Belgilash katagi"
+    id_element:
+      text: "Matn"
+      random20: "20-bit tasodifiy"
+      random32: "32-bit tasodifiy"
+      random6: "6 xonali tasodifiy"
+      random9: "9 xonali tasodifiy"
+      guid: "GUID"
+      datetime: "Sana / vaqt"
+      sequence: "Ketma-ketlik"
+  home:
+    index:
+      latest: "So'nggi inventarlar"
+      popular: "Eng mashhur 5 ta inventar"
+      tags: "Teglar"
+  search:
+    index:
+      title: "Qidiruv natijalari: %{query}"
+      inventories: "Inventarlar"
+      items: "Itemlar"
+  users:
+    show:
+      owned: "Mening inventarlarim"
+      shared: "Yozish huquqim bor inventarlar"
+  inventories:
+    new:
+      title: "Yangi inventar"
+    update:
+      saved: "Saqlandi"
+      conflict: "Inventarni boshqa odam o'zgartirdi. Sahifani yangilang."
+    destroy_many:
+      deleted: "Inventarlar o'chirildi"
+  stats:
+    items_count: "Itemlar: %{count}"
+    field: "Maydon"
+    metric: "Ko'rsatkich"
+    value: "Qiymat"
+    avg: "O'rtacha"
+    min: "Eng kichik"
+    max: "Eng katta"
+    mode: "Eng ko'p uchraydigan"
+  items:
+    create:
+      created: "Item yaratildi"
+    update:
+      updated: "Item yangilandi"
+    destroy_many:
+      deleted: "Itemlar o'chirildi"
+  admin:
+    users:
+      index:
+        title: "Foydalanuvchilar"
+        status: "Holat"
+        block: "Bloklash"
+        unblock: "Blokdan chiqarish"
+        promote: "Admin qilish"
+        demote: "Adminlikni olish"
+      user:
+        admin: "admin"
+        blocked: "bloklangan"
+      bulk:
+        done: "Bajarildi"
+  devise:
+    failure:
+      blocked: "Akkauntingiz bloklangan."
+  activerecord:
+    attributes:
+      inventory:
+        title: "Nomi"
+        description: "Tavsif"
+        category_id: "Kategoriya"
+        tag_list: "Teglar"
+        image: "Rasm"
+        public: "Ochiq: istalgan foydalanuvchi item qo'sha oladi"
+        fields: "Maydonlar"
+        id_elements: "ID elementlari"
+      field:
+        show_in_table: "Jadvalda ko'rsatish"
+      item:
+        custom_id: "ID"
+    errors:
+      messages:
+        invalid_format: "ID formatiga mos emas"
+        too_many: "har turdan ko'pi bilan %{count} ta"
+        stale: "Itemni boshqa odam o'zgartirdi. Sahifani yangilang."
+        taken: "allaqachon mavjud"
+        blank: "bo'sh bo'lmasligi kerak"
+  date:
+    formats:
+      default: "%d.%m.%Y"
+  time:
+    formats:
+      short: "%d.%m.%Y %H:%M"
+      long: "%d %B %Y, %H:%M"
