@@ -1,0 +1,3 @@
+<%= render layout: "inventories/forms/form", locals: {inventory:, tab: "fields"} do |form|  %>
+<%= render "inventories/forms/list_editor", form:, association: :fields, model: Field, row: "inventories/forms/field_row"  %>
+<% end%>

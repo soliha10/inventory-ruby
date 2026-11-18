@@ -1,0 +1,19 @@
+<div data-controller="list-editor">
+    <div class="input-group mb-3 list-editor-add">
+<select class="form-select" data-list-editor-target="kind" > <%= options_for_select(kind_options(model))%>  </select>
+<button type="button" class="btn btn-outline-primary" data-action="list-editor#addd" > <%= t("actions.add") %> </button>
+    </div>
+<ul class="list-group" data-list-editor-target="list" >
+    <%= form.fields_for association, include_id: false do |row_form| %>
+    <%=render row, row_form:%>
+    <%=end%>
+     </ul>
+     <% mdoel::KINDS.each do |kind|%>
+     <template data-list-editor-target="template" data-kind="<%= kind %> ">
+        <%= form.fields_for association, model.new(kind:), child_index: "NEW_RECORD", include_id: false , do |row_form| %>
+        <%= render row, row_form:%>
+        <%end%>
+     </template>
+     <%end%>
+     <p class="form-text"><%=t("hints.drag") %></p>
+</div>
