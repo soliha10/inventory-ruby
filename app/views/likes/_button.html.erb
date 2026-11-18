@@ -1,0 +1,9 @@
+<div id="like_button" >
+    <% liked = item.liked_by?(current_user) %>
+    <% label = "#{liked ? "♥" : "♡"} #{item.likes.count}" %>
+    <% if user_signed_in? %>
+    <%= button_to label, item_like_path(item), method: liked ? :delete : :post, class: "btn btn-sm btn-outline-danger"  %>
+    <% else %>
+    <span class="btn btn-sm btn-outline-secondary disabled"> <%= label%> </span>
+<%end%>
+</div>
