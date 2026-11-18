@@ -1,0 +1,4 @@
+<%= render layout: "inventories/page", locals: {inventory: @inventory} do %>
+<div class="mb-3" > <%= render "likes/button", item: @item %> </div>
+<%= render "items/form", item: @item %>
+<% end %>

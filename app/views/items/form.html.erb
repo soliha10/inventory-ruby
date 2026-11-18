@@ -1,0 +1,15 @@
+<%= form_with model: [item.inventory, item] do |form| %>
+<%= render "shared/errors", record: item  %>
+<%= tag.fieldset class: "vstack gap-3", disabled: !policy(item).update? do %>
+<%= form.hidden_field :lock_version  %>
+<div>
+    <%= form.label :custom_id, class: "form-label" %> <%= hint(t("hints.custom_id")) %>
+    <%= form.text_field :custom_id,  class: "form-control"%>
+</div>
+<%= render "items/fixed_fields", item: item if item.persisted? %>
+<% item.inventory.fields.each do |field| %>
+<%= render "items/field", form:, field: %>
+<%end%>
+<div> <%= form.submit t("actions.save"), class: "btn btn-primary"  %> </div>
+<%end%>
+<%end%>

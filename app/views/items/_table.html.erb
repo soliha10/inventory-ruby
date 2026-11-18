@@ -1,0 +1,35 @@
+<% writable = policy(inventory).write_items?%>
+<% columns = inventory.table_fields %>
+<%= form_with url: destroy_many_inventory_items_path(inventory), method: :delete, data: {controller: "selection"} do %>
+<% if writable %>
+<%= render layout: "shared/toolbar" do %>
+<%= link_to t("actions.new"), new_inventory_item_path(inventory), class: "btn btn-primary" %>
+<%= render "shared/delete_button" %>
+<%end%>
+<%end%>
+
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <%= render "shared/check_all" if writable %>
+                <th><%= t("columns.custom_id") %></th>
+                <% columns.each do |field| %> <th> <%= field.title%> </th> <%end%>
+                <th> <%= t("columns.created_at")%> </th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <%= items.each do |item| %>
+            <%= tag.tr class: "clickable", data: row_link(new_inventory_item_path(inventory, item)) do %>
+            <%= render "shared/check", id:item.id if writable %>
+            <td> <%=item.custom_id%> </td>
+            <% columns.each do |field| %> <td><%= field.value(item, field)%>% </td> <%end%>
+            <td><%= l(item.created_at, format: :short )%></td>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<%end%>
+<%= render "shared/pager", records: items %>

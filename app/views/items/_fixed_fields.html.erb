@@ -1,0 +1,6 @@
+<dl class="row small text-body-secondary mb-0">
+  <dt class="col-sm-3"><%= t("columns.creator_name") %></dt>
+  <dd class="col-sm-9"><%= link_to item.creator.name, user_path(item.creator) %></dd>
+  <dt class="col-sm-3"><%= t("columns.created_at") %></dt>
+  <dd class="col-sm-9"><%= l(item.created_at, format: :long) %></dd>
+</dl>
