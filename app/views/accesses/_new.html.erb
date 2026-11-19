@@ -1,0 +1,6 @@
+<%= form_with url: inventory_accesses_path(inventory), class: "d-flex gap-2 mb-3" do  %>
+<div class="flex-grow-1">
+<%= select_tag :user_id, nil, placeholder: t("hints.find_user"), data: {controller: "remote-select", remote_select_url_value: users_path } %>
+</div>
+<%= submit_tag t("actions.add"), class: "btn btn-primary" %>
+<%end%>

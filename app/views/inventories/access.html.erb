@@ -1,0 +1,6 @@
+<%= render layout: "inventories/page", locals: {inventory: @inventory} do %>
+<%= render "inventories/forms/access", inventory: @inventory %>
+<hr>
+<%= render "accesses/new", inventory: @inventory %>
+<%= render "accesses/list", inventory: @inventory, writers: @writers  %>
+<%end%>

@@ -1,0 +1,19 @@
+<%= form_with url: destroy_many_inventory_accesses_path(inventory), method: :delete, data: {controller: "selection" } do  %>
+<%= render layout: "shared/toolbar" do %>
+<%= render "shared/delete_button" %>
+<div  class="btn-group">
+<% %w[name email].each do |sort| %>
+<%= link_to t("columns.#{sort}"), access_inventory_path(inventory, sort:), class: class_names("btn btn-outline-secondary", active: params.fetch(:sort, "name") == sort)  %>
+<% end%>
+</div>
+<%end%>
+<table class="table align-middle">
+    <thead> <tr> <%= render "shared/check_all" %> <th> <%= t("columns.name") %> </th> <th> <%= t("columns.email") %> </th> </tr> </thead>
+    <tbody>
+        <% writers.each do |user| %>
+        <tr> <%= render "shared/check", id: user.id %> <td> <%= link_to user.name, user_path(user) %></td><td><%= user.email %></td> </tr>
+<%end%>
+</tbody>
+
+</table>
+<%end%>
