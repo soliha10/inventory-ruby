@@ -1,0 +1,14 @@
+<%= render layout: "inventories/page", locals: {inventory: @inventory} do  %>
+<p class="lead" > <%= t("stats.items_count", count: @stats.items_count) %> </p>
+<table class="table">
+    <thead><tr><th><%= t("stats.field") %></th><th><%= t("stats.metric") %></th><th><%= t("stats.value") %></th></tr></thead>
+    <tbody>
+        <% @stats.rows.each do |field, metrics| %>
+        <% metrics.each do |metric, value| %>
+        <tr><td><%= field.title %></td><td><%= t("stats.#{metric}") %></td><td><%= value.try(:round,2) || value%></td></tr>
+        <%end%>
+        <%end%>
+        </tbody>
+        </table>
+
+<%end%>
