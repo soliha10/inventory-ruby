@@ -1,0 +1,6 @@
+<%= render layout: "inventories/page", locals: {inventory: @inventory} do %>
+<%= turbo_stream_from @inventory %>
+<div id="posts" class="vstack gap-3 mb-3" ><%= render @posts %>
+</div>
+<%= render "posts/form", inventory: @inventory if user_signed_in? %>
+<%end%>

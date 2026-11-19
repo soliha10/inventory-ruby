@@ -1,0 +1,8 @@
+<article class="card" id="<%= dom_id(post)%>" >
+    <div class="card-header small">
+        <%= link_to post.user.name, user_path(post.user) %> · <%= l(post.created_at, format: :short ) %> 
+    </div>
+    <div class="card-body">
+<%= markdown(post.body) %>
+    </div>
+</article>
