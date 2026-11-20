@@ -1,0 +1,4 @@
+<%= search_form_for query, as: key, url: user_path(@user), class: "d-flex gap-2 mb-2" do |form|  %>
+<%= form.search_field :title_or_description_cont, class: "form-control", placeholder: t("actions.filter")  %>
+<%= form.submit t("actions.filter"), class: "btn btn-outline-secondary" %>
+<%end%>

@@ -1,0 +1,19 @@
+<h1 class="h3" > <%= @user.name%> </h1>
+<section class="mb-5">
+<h2 class="h5" ><%= t(".owned")%></h2>
+<%= render "users/filter", query: @owned, key: :owned %>
+<%= form_with url: destroy_many_inventories_path, method: :delete, data: {controller: "selection"} do %>
+<% if current_user == @user %>
+<%= render layout: "shared/toolbar" do %>
+<%= link_to t("actions.new"), new_inventory_path,  class: "btn btn-primary"  %>
+<%= render "shared/delete_button" %>
+<%end%>
+<%end%>
+<%= render "inventories/table", inventories: @owned.result.includes(:creator, :category), query: @owned, selectable: current_user == @user %>
+<%end%>
+</section>
+<section>
+    <h2 class="h5" ><%= t(".shared") %></h2>
+    <%= render "users/filter", query: @shared, key: :shared %>
+    <%= render "inventories/table", inventories: @shared.result.includes(:creator, :category), query: @shared %>
+</section>
