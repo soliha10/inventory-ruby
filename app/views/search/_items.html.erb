@@ -1,0 +1,13 @@
+<div class="table-responsive">
+<table class="table table-hover">
+<thead><tr><th><%= t("columns.custom_id") %></th><th><%= t("columns.inventory") %></th></tr></thead>
+<tbody>
+    <% items.each do |item|%>
+    <%= tag.tr class: "clickable", data: row_link(inventory_item_path(item.inventory, item)) do  %>
+    <td><%= item.custom_id %></td>
+    <td><%= item.inventory.title %></td>
+<%end%>
+<%end%>
+</tbody>
+</table>
+</div>

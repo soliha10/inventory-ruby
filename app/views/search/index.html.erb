@@ -1,0 +1,5 @@
+<h2 class="h3" ><%= t(".title", query: params[:tag] || params[:q] ) %> </h2>
+<h2 class="h5" > <%= t(".inventories")%> </h2>
+<%= render "inventories/table", inventories: @inventories %>
+<h2 class="h5"> <%= t(".items")%> </h2>
+<%= render "search/items", items: @items %>
