@@ -1,1 +1,15 @@
-<h1>Hello, world</h1>
+<div class="row g-4">
+ <section class="col-lg-8">
+    <h2 class="h4" >
+<%= t(".latest")%> </h2>
+    <%= render "inventories/table" , inventories: @latest  %>
+    <h2 class="h4"> <%= t(".popular")%> </h2>
+    <%= render "inventories/table" , inventories: @popular  %>
+
+ </section>
+ <aside class = "col-lg-4">
+    <h2 class= "h4" > <%= t(".tags")%> </h2>
+    <%= render "home/tag_cloud", tags: @tags %>
+
+ </aside>
+</div>

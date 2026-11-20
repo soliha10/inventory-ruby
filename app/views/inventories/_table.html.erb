@@ -1,0 +1,24 @@
+<div  class="table-responsive">
+<table class="table table-hover align-middle">
+<thead>
+    <tr>
+        <%= render "shared/check_all" if local_assigns[:selectable]  %>
+        <th><%= sort_header(local_assigns[:query], :title) %></th>
+        <th><%= sort_header(local_assigns[:query], :category_name) %></th>
+        <th><%= t("columns.description") %></th>
+        <th><%= sort_header(local_assigns[:query], :creator_name) %></th>
+    </tr>
+</thead>
+<tbody>
+    <% inventories.each do |inventory| %>
+    <%= tag.tr class: "clickable", data: row_link(inventory_path(inventory)) do %>
+    <%= render "shared/check", id: inventory.id if local_assigns[:selectable]  %>
+    <td><%= inventory.title %></td>
+    <td><%= inventory.category.name %></td>
+    <td class="text-truncate cell-wide"><%= truncate(strip_tags(markdown(inventory.description)), length:80 ) %></td>
+    <td><%= inventory.creator.name %></td>
+    <% end %>
+    <% end %>
+</tbody>
+</table>
+</div>

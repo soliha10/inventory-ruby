@@ -1,0 +1,6 @@
+<div class="d-flex flex-wrap gap-2">
+<% max = tags.map(&:uses).max.to_i%>
+<%tags.each do |tag|  %>
+<%= link_to tag.name, search_path(tag: tag.name), class: "link-secondary", style: tag_cloud_size(tag, max)  %>
+<%end%>
+</div>
