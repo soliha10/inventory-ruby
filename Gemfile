@@ -19,9 +19,10 @@ gem "ransack"
 gem "pg_search"
 gem "kaminari"
 gem "redcarpet"
-gem "cloudinary"
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
+  gem "dotenv-rails"
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
 end
 
