@@ -1,0 +1,9 @@
+<tr>
+    <%= render "shared/check", id: user.id %>
+    <td><%= link_to user.name, user_path(user) %></td>
+    <td><%= user.email %></td>
+    <td>
+        <%= tag.span t(".admin"), class: "badge text-bg-primary" if user.admin? %>
+        <%= tag.span t(".blocked"), class: "badge text-bg-danger" if user.blocked? %>
+    </td>
+</tr>

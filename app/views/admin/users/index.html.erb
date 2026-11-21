@@ -1,0 +1,18 @@
+<h1 class="h3" > <%= t(".title") %> </h1>
+<%= form_with url: bulk_admin_users_path, method: :patch, data: { controller: "selection"} do %>
+<%= render layout: "shared/toolbar" do %>
+<% Admin::UsersController::OPERATIONS.each_key do |operation| %>
+<%= button_tag t("admin.users.index.#{operation}"), name: :operation, value: operation, class: "btn btn-outline-secondary", data: { selection_target: "action"} %>
+<%end%>
+<%= button_tag t("actions.delete"), name: :operation, value: "destroy", class: "btn btn-outline-danger", data: { selection_target: "action", turbo_confirm: t("actions.confirm")} %>
+<%end%>
+<div class="table-responsive">
+<table class="table align-middle">
+<thead><tr> <%= render "shared/check_all" %><th> <%= t("columns.name") %> </th><th><%= t("columns.email") %></th><th><%= t(".status") %></th> </tr></thead>
+<tbody>
+    <%= render partial: "admin/users/user", collection: @users %>
+</tbody>
+</table>
+</div>
+<%end%>
+<%= render "shared/pager", records: @users %>
