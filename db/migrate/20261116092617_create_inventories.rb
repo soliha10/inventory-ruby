@@ -6,7 +6,7 @@ class CreateInventories < ActiveRecord::Migration[8.1]
       t.string :title, null:false
       t.text :description, null:false, default: ""
       t.boolean :public, null:false, default: false
-      t.integer :lock_version, null:false default: 0
+      t.integer :lock_version, null:false, default: 0
       t.timestamps
     end
     add_index :inventories, :created_at

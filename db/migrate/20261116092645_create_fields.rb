@@ -1,7 +1,7 @@
 class CreateFields < ActiveRecord::Migration[8.1]
   def change
     create_table :fields do |t|
-      t.references :inventory, null: false, foreign_key: {on_delete :cascade}
+      t.references :inventory, null: false, foreign_key: {on_delete: :cascade}
       t.string :kind, null: false
       t.integer :slot, null:false
       t.string :title, null: false

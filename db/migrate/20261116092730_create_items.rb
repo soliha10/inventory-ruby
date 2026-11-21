@@ -2,7 +2,7 @@ class CreateItems < ActiveRecord::Migration[8.1]
   def change
     create_table :items do |t|
       t.references :inventory, null:false, foreign_key: {on_delete: :cascade}, index: false
-      t.references :creator, null:false, foreign_key: {to_table: :users, on_delete: : :cascade}
+      t.references :creator, null:false, foreign_key: {to_table: :users, on_delete: :cascade}
       t.string :custom_id, null:false
       t.integer :sequence_number, null:false, default: 0
       t.integer :lock_version, null:false, default: 0
