@@ -20,11 +20,11 @@
             
         </thead>
         <tbody>
-            <%= items.each do |item| %>
-            <%= tag.tr class: "clickable", data: row_link(new_inventory_item_path(inventory, item)) do %>
+            <% items.each do |item| %>
+            <%= tag.tr class: "clickable", data: row_link(inventory_item_path(inventory, item)) do %>
             <%= render "shared/check", id:item.id if writable %>
             <td> <%=item.custom_id%> </td>
-            <% columns.each do |field| %> <td><%= field.value(item, field)%>% </td> <%end%>
+            <% columns.each do |field| %> <td><%= field_value(item, field)%></td> <%end%>
             <td><%= l(item.created_at, format: :short )%></td>
             <% end %>
             <% end %>

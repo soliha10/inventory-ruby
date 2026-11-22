@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
 authorize(@item).update(item_params) ? redirect_to(@inventory, notice: t(".updated")) : render(:show, status: :unprocessable_entity)
  rescue ActiveRecord::StaleObjectError
   reject(:show, :base, :stale)
- rescue Activerecord::RecordNotUnique
+ rescue ActiveRecord::RecordNotUnique
   reject_duplicate(:show)
  end
  def destroy_many

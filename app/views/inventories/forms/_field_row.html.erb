@@ -1,8 +1,8 @@
 <li class="list-group-item d-flex gap-2 align-items-center flex-wrap">
 <span class="drag-handle">⠿</span>
 <span class="badge text-bg-primary"> <%= kind_name(Field, row_form.object.kind)%> </span>
-<%= row_form.text_field : title, class: "form-control form-control-sm w-auto flex-grow-1", placeholder: t("columns.title") %>
-<%= row_form.text_field : description, class: "form-control form-control-sm w-auto flex-grow-1", placeholder: t("columns.description")  %>
+<%= row_form.text_field :title, class: "form-control form-control-sm w-auto flex-grow-1", placeholder: t("columns.title") %>
+<%= row_form.text_field :description, class: "form-control form-control-sm w-auto flex-grow-1", placeholder: t("columns.description")  %>
 <div class="form-check">
 <%= row_form.check_box :show_in_table, class: "form-check-input"%>
 <%= row_form.label :show_in_table, class: "form-check-label"%>

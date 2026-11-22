@@ -1,6 +1,6 @@
 <div class="<%= "form-check" if field.kind == "boolean" %>">
-  <%= field_input(form, field) if field.kind == "boolean" %>
-  <%= field.label field.column, field.title,  class: field.kind == "boolean" ? "form-check-label" : "form-label" %>
+  <%= field_input(form, field) unless field.kind == "boolean" %>
+  <%= form.label field.column, field.title,  class: field.kind == "boolean" ? "form-check-label" : "form-label" %>
   <%= hint(field.description) if field.description.present? %>
-  <%= field_input(form, field) if field.kind == "boolean" %>
+  <%= field_input(form, field) unless field.kind == "boolean" %>
 </div>

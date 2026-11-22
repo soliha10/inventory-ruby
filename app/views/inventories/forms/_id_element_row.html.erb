@@ -2,5 +2,5 @@
   <span class="drag-handle">⠿</span>
   <span class="badge text-bg-primary"> <%= kind_name(IdElement, row_form.object.kind)%> </span>
   <%= row_form.text_field :value, class:"form-control form-control-sm", placeholder: t("id_placeholders.#{row_form.object.kind}") unless row_form.object.kind == "guid" %>
-  <%= render "inventories/forms/row_hidden", row_hidden: %>
+  <%= render "inventories/forms/row_hidden", row_form: %>
 </li>

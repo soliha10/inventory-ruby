@@ -2,7 +2,7 @@
 <div data-controller="id-preview" data-id-preview-url-value="<%= id_preview_inventory_path(inventory)%>" data-action="input->id-preview#refresh change->id-preview#refresh " >
 <div class="alert alert-secondary">
  <%= t("hints.preview" )%>: <strong id="id_preview" data-turbo-permanent data-id-preview-target="output" ></strong>
- <%= hint(t("hints.id_format_hmtl"), type: "popover" ) %>
+ <%= hint(t("hints.id_format_html"), type: "popover" ) %>
 </div>
 <%= render "inventories/forms/list_editor", form:, association: :id_elements, model: IdElement, row: "inventories/forms/id_element_row" %>
 </div>

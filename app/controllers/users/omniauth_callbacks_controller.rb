@@ -1,4 +1,4 @@
-module users
+module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2 = sign_in_from_provider
     def facebook = sign_in_from_provider

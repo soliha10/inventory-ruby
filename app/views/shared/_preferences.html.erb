@@ -1,6 +1,6 @@
 <div class="d-flex gap-1 ">
     <% User::LOCALES.each do |locale| %>
-        <%= button_to locale.upcase, preferences_path, method: :patch, params: {locale:}, class: "btn btn-sm btn_outline-secondary", disabled: I18n.locale.to_s ==locale %>
+        <%= button_to locale.upcase, preferences_path, method: :patch, params: {locale:}, class: "btn btn-sm btn-outline-secondary", disabled: I18n.locale.to_s ==locale %>
     <% end%>
-    <%= button_to (current_theme == "dark" ? "*" : "☾" ), preferences_path, method: :patch, params: { theme: (User::THEMES - [current_theme]).first}, class: "btn btn-sm btn_outline-secondary" %>
+    <%= button_to (current_theme == "dark" ? "☀" : "☾" ), preferences_path, method: :patch, params: { theme: (User::THEMES - [current_theme]).first}, class: "btn btn-sm btn-outline-secondary" %>
 </div>

@@ -1,9 +1,9 @@
 class PreferencesController < ApplicationController
     def update
-      session.update(prefrence_params)
-      current_user&.update(prefrence_params)
-      redirect_back_or_to root_path, notice: t('.success')
+      session.update(preference_params)
+      current_user&.update(preference_params)
+      redirect_back_or_to root_path
     end
     private
-    def prefrence_params = params.permit(:locale, :theme).to_h
+    def preference_params = params.permit(:locale, :theme).to_h
 end

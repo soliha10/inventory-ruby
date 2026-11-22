@@ -4,7 +4,7 @@
         <h1 class="h3 mb-1"> <%= inventory.title %> </h1>
         <div class="small text-body-secondary"> <%= inventory.category.name%> · <%= link_to inventory.creator.name, user_path(inventory.creator)%> </div>
         <% inventory.tags.each do |tag| %>
-        <%= link_to tag.name, search_path(tag: tag.name), class: "badge bg-secondary text-decoration-none"  %>
+        <%= link_to tag.name, search_path(tag: tag.name), class: "badge text-bg-secondary text-decoration-none"  %>
         <%end%>
     </div>
 </div>

@@ -12,6 +12,6 @@ class LikesController < ApplicationController
     render_button
   end
   private
-  def render_button = render(turbo_stream: turbo_stream.replace("like_button", partioal: "likes/button", locals: {item: @item} ) )
+  def render_button = render(turbo_stream: turbo_stream.replace("like_button", partial: "likes/button", locals: {item: @item} ) )
 
 end

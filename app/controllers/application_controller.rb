@@ -1,7 +1,7 @@
 class  ApplicationController < ActionController::Base
   include Pundit::Authorization
   include Preferences
-  allow_browser versions: :moders
+  allow_browser versions: :modern
   before_action :permit_sign_up_name, if: :devise_controller?
   rescue_from Pundit::NotAuthorizedError, with: :deny_access
 

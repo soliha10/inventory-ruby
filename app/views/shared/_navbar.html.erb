@@ -2,12 +2,12 @@
     <div class="container">
         <%= link_to t("app.name"), root_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"  > <span class="navbar-toggler-icon"> </span> </button>
-    <div id="nav" >
+    <div id="nav" class="collapse navbar-collapse gap-2" >
 
-        <%= from_with url:search_path, method: :get, class: "d-flex flex-grow-1 my-2" do %>
+        <%= form_with url:search_path, method: :get, class: "d-flex flex-grow-1 my-2" do %>
         <%= search_field_tag :q, params[:q], class: "form-control", placeholder: t("nav.search") %>
         <% end %>
-        <%= render "shared/preference"%>
+        <%= render "shared/preferences"%>
         <%= render "shared/account"%>
     </div>
 
