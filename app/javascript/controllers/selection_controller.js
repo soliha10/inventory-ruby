@@ -6,7 +6,7 @@ export default class extends Controller {
     }
 
     toggleAll(event) {
-        this.checkBoxTargets.forEach((box) => (box.checked = event.target.checked))
+        this.checkboxTargets.forEach((box) => (box.checked = event.target.checked))
         this.update()
     }
     update(){

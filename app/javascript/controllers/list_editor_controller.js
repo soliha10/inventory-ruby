@@ -4,16 +4,16 @@ export default class extends Controller {
     static targets = ["list", "template", "kind"]
     connect(){
         Sortable.create(this.listTarget, {
-            ahndle: ".drag-handle",
+            handle: ".drag-handle",
             animation: 150,
             revertOnSpill: true,
             onSpill: (event) => this.remove(event.item),
-            onEnd: () => this.change()
+            onEnd: () => this.changed()
         })
     }
     add() {
         const template = this.templateTargets.find((item) => item.dataset.kind === this.kindTarget.value)
-        this.listTarget.insertAdjacentHTML("beforeend", template.innerHTML.replacaAll("NEW_RECORD", Date.now()) )
+        this.listTarget.insertAdjacentHTML("beforeend", template.innerHTML.replaceAll("NEW_RECORD", Date.now()) )
         this.renumber()
     }
     remove(row) {
@@ -22,7 +22,7 @@ export default class extends Controller {
         this.changed()
     }
     renumber(){
-        this.lsitTarget.querySelectorAll("[name$='[position]']").forEach((input, index) => (input.value=index))
+        this.listTarget.querySelectorAll("[name$='[position]']").forEach((input, index) => (input.value=index))
     }
     changed() {
         this.renumber()
