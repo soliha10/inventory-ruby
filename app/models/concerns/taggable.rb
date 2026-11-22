@@ -1,6 +1,6 @@
-module Tggable
+module Taggable
   extend ActiveSupport::Concern
-  include do
+  included do
     has_many :taggings, dependent: :delete_all
     has_many :tags, through: :taggings
     scope :tagged, ->(name) {joins(:tags).where(tags: {name: name})}

@@ -1,7 +1,7 @@
-class User < AplicationRecord
+class User < ApplicationRecord
   LOCALES = %w[en uz].freeze
   THEMES = %w[light dark].freeze
-  devise :database_authenticable, :registerable, :recoverable, :rememberable, :validatable,
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
   has_many :inventories, foreign_key: :creator_id, dependent: :destroy, inverse_of: :creator
   has_many :accesses, dependent: :delete_all
@@ -13,13 +13,13 @@ class User < AplicationRecord
   scope :matching, ->(term) {where("name ILIKE :q OR email ILIKE :q", q: "#{sanitize_sql_like(term.to_s)}%")}
   def self.from_omniauth(auth)
     find_or_create_by!(provider: auth.provider, uid: auth.uid) do |user|
-      user.assign_attributes(name: auth.info.name, email: auth.info.email || "#{auth.uid}@#{auth.provider}.oauth")
-                            password: Devise.friendly_token
+      user.assign_attributes(name: auth.info.name, email: auth.info.email || "#{auth.uid}@#{auth.provider}.oauth",
+                            password: Devise.friendly_token)
     end
   end
 
   def active_for_authentication? =super && !blocked?
   def inactive_message = blocked? ? :blocked : super
-  def self.ransackable_attributes(_auth = null) = %w[name email]
+  def self.ransackable_attributes(_auth = nil) = %w[name email]
 
 end

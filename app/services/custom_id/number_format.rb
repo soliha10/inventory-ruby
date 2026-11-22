@@ -7,6 +7,6 @@ def initialize(spec)
  @width = match[:width].to_i
 end
 def apply(number) = number.to_s(@hex ? 16 : 10).upcase.rjust(@width, "0")
-def regex = "#{@hex ? '[0-9A-F]' : '\d' }{#{[@width, 1].max}}"
+def regex = "#{@hex ? '[0-9A-F]' : '\d' }{#{[@width, 1].max},}"
 end
 end

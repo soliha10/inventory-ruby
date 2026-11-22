@@ -1,6 +1,8 @@
 class Inventory < ApplicationRecord
  include PgSearch::Model
  include Taggable
+ include HasCustomFields
+ include HasCustomId
 
  belongs_to :creator, class_name: "User"
  belongs_to :category

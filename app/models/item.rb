@@ -7,7 +7,7 @@ has_many :likes, dependent: :delete_all
 validates :custom_id, presence: true, uniqueness: {scope: :inventory_id}
 validate :custom_id_matches_format, on: :update, if: :custom_id_changed?
 before_validation :assign_custom_id, on: :create
-pg_search_scope :search, aaginst: [:custom_id, *SEARCHABLE], using: {tsearch: {prefix: true}}
+pg_search_scope :search, against: [:custom_id, *SEARCHABLE], using: {tsearch: {prefix: true}}
 def liked_by?(user) = user.present? && likes.exists?(user_id: user.id)
   private
   def assign_custom_id
