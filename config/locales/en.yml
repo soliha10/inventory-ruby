@@ -8,6 +8,10 @@ en:
     sign_up: "Sign up"
     sign_out: "Sign out"
     continue_with: "Continue with %{provider}"
+    providers:
+      google_oauth2: "Google"
+      github: "GitHub"
+      facebook: "Facebook"
   flash:
     denied: "You are not allowed to do this."
   actions:

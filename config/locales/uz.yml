@@ -8,6 +8,10 @@ uz:
     sign_up: "Ro'yxatdan o'tish"
     sign_out: "Chiqish"
     continue_with: "%{provider} orqali kirish"
+    providers:
+      google_oauth2: "Google"
+      github: "GitHub"
+      facebook: "Facebook"
   flash:
     denied: "Sizga bu amalga ruxsat yo'q."
   actions:
