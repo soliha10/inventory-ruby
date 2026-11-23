@@ -13,6 +13,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "devise"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
+gem "omniauth-github"
 gem "omniauth-rails_csrf_protection"
 gem "pundit"
 gem "ransack"
