@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" data-bs-theme="<%= current_theme%>" >
+<html lang="<%= I18n.locale %>">
   <head>
     <title><%= content_for(:title) || t("app.name") %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,7 +13,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-bs-theme="<%= current_theme %>">
     <%= render "shared/navbar"%>
   <main class="container py-4" > 
     <%= render "shared/flash" , messages: flash %>
