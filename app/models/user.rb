@@ -12,10 +12,12 @@ class User < ApplicationRecord
 
   scope :matching, ->(term) {where("name ILIKE :q OR email ILIKE :q", q: "#{sanitize_sql_like(term.to_s)}%")}
   def self.from_omniauth(auth)
-    find_or_create_by!(provider: auth.provider, uid: auth.uid) do |user|
-      user.assign_attributes(name: auth.info.name.presence || auth.info.nickname, email: auth.info.email || "#{auth.uid}@#{auth.provider}.oauth",
-                            password: Devise.friendly_token)
-    end
+    find_by(provider: auth.provider, uid: auth.uid) || find_by(email: auth.info.email) || create_from_omniauth!(auth)
+  end
+
+  def self.create_from_omniauth!(auth)
+    create!(provider: auth.provider, uid: auth.uid, name: auth.info.name.presence || auth.info.nickname,
+            email: auth.info.email || "#{auth.uid}@#{auth.provider}.oauth", password: Devise.friendly_token)
   end
 
   def active_for_authentication? =super && !blocked?
