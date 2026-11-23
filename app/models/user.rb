@@ -2,7 +2,7 @@ class User < ApplicationRecord
   LOCALES = %w[en uz].freeze
   THEMES = %w[light dark].freeze
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[google_oauth2 github facebook]
+         :omniauthable, omniauth_providers: %i[google_oauth2 github]
   has_many :inventories, foreign_key: :creator_id, dependent: :destroy, inverse_of: :creator
   has_many :accesses, dependent: :delete_all
   has_many :writable_inventories, through: :accesses, source: :inventory

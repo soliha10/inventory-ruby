@@ -11,7 +11,6 @@ en:
     providers:
       google_oauth2: "Google"
       github: "GitHub"
-      facebook: "Facebook"
   flash:
     denied: "You are not allowed to do this."
   actions:
@@ -84,7 +83,7 @@ en:
       title: "Privacy policy"
       paragraphs:
         - "Inventory stores only the data needed to run your account: your name, email address and the inventories, items, posts and likes you create."
-        - "When you sign in with Google or Facebook we receive only your name and email address. We never see or store your Google or Facebook password."
+        - "When you sign in with Google or GitHub we receive only your name and email address. We never see or store your Google or GitHub password."
         - "Images you upload are kept in cloud storage (Supabase). Your data is not sold or shared with third parties."
         - "Your language and theme choices are saved in your account. You can ask the administrator to delete your account and all related data at any time."
   search:

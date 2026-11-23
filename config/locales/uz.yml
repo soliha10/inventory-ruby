@@ -11,7 +11,6 @@ uz:
     providers:
       google_oauth2: "Google"
       github: "GitHub"
-      facebook: "Facebook"
   flash:
     denied: "Sizga bu amalga ruxsat yo'q."
   actions:
@@ -84,7 +83,7 @@ uz:
       title: "Maxfiylik siyosati"
       paragraphs:
         - "Inventory faqat akkauntingiz ishlashi uchun kerakli ma'lumotlarni saqlaydi: ismingiz, emailingiz hamda siz yaratgan inventarlar, itemlar, postlar va like'lar."
-        - "Google yoki Facebook orqali kirganingizda biz faqat ismingiz va emailingizni olamiz. Google yoki Facebook parolingizni ko'rmaymiz va saqlamaymiz."
+        - "Google yoki GitHub orqali kirganingizda biz faqat ismingiz va emailingizni olamiz. Google yoki GitHub parolingizni ko'rmaymiz va saqlamaymiz."
         - "Yuklagan rasmlaringiz bulut xotirasida (Supabase) saqlanadi. Ma'lumotlaringiz sotilmaydi va uchinchi tomonlarga berilmaydi."
         - "Til va tema tanlovingiz akkauntingizda saqlanadi. Istalgan vaqtda administratordan akkauntingiz va unga tegishli barcha ma'lumotlarni o'chirishni so'rashingiz mumkin."
   search:
