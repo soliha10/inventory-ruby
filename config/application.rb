@@ -19,6 +19,7 @@ module RubyCoursework
     config.i18n.available_locales = %i[en uz]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = [:en]
+    config.active_storage.touch_attachment_records = false
     config.generators.system_tests = nil
   end
 end

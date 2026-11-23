@@ -17,7 +17,7 @@ class InventoriesController < ApplicationController
 def update
   saved = @inventory.update(inventory_params)
   @inventory.reload if saved
-  render turbo_stream: [replace_tab_form, flash_stream(*save_message(saved))]
+  render turbo_stream: [replace_tab_form, (replace_header if saved), flash_stream(*save_message(saved))].compact
 rescue ActiveRecord::StaleObjectError
   render turbo_stream: flash_stream(:alert, t(".conflict")), status: :conflict
 end
@@ -35,5 +35,6 @@ def set_inventory = @inventory = Inventory.find(params[:id])
   def inventory_params = params.require(:inventory).permit(*PERMITTED).tap { |attrs| attrs.delete(:image) if attrs[:image].blank? }
   def current_tab = params[:tab].presence_in(OWNER_TABS) || OWNER_TABS.first
   def replace_tab_form = turbo_stream.replace("inventory_form", partial: "inventories/forms/#{current_tab}", locals: {inventory: @inventory} , method: :morph )
+  def replace_header = turbo_stream.replace("inventory_header", partial: "inventories/header", locals: {inventory: @inventory})
   def save_message(saved) = saved ? [:notice, t(".saved")] : [:alert, @inventory.errors.full_messages.to_sentence]
 end

@@ -12,7 +12,8 @@ export default class extends Controller {
       async load(){
         const body = new FormData(this.element.closest("form"))
         body.delete("_method")
-        const response = await fetch(this.urlValue, {method: "POST", body})
+        const headers = {"X-CSRF-Token": document.querySelector("meta[name=csrf-token]").content}
+        const response = await fetch(this.urlValue, {method: "POST", body, headers})
         this.outputTarget.textContent = await response.text()
     }
 }

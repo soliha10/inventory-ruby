@@ -11,6 +11,12 @@ export default class extends Controller {
     markDirty() {
         this.dirty = true
     }
+    reset() {
+        this.dirty = false
+    }
+    clearFiles() {
+        this.element.querySelectorAll("input[type=file]").forEach((input) => (input.value = ""))
+    }
     save() {
         if (!this.dirty) return 
         this.dirty =false
