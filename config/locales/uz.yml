@@ -76,6 +76,13 @@ uz:
       latest: "So'nggi inventarlar"
       popular: "Eng mashhur 5 ta inventar"
       tags: "Teglar"
+    privacy:
+      title: "Maxfiylik siyosati"
+      paragraphs:
+        - "Inventory faqat akkauntingiz ishlashi uchun kerakli ma'lumotlarni saqlaydi: ismingiz, emailingiz hamda siz yaratgan inventarlar, itemlar, postlar va like'lar."
+        - "Google yoki Facebook orqali kirganingizda biz faqat ismingiz va emailingizni olamiz. Google yoki Facebook parolingizni ko'rmaymiz va saqlamaymiz."
+        - "Yuklagan rasmlaringiz bulut xotirasida (Supabase) saqlanadi. Ma'lumotlaringiz sotilmaydi va uchinchi tomonlarga berilmaydi."
+        - "Til va tema tanlovingiz akkauntingizda saqlanadi. Istalgan vaqtda administratordan akkauntingiz va unga tegishli barcha ma'lumotlarni o'chirishni so'rashingiz mumkin."
   search:
     index:
       title: "Qidiruv natijalari: %{query}"
